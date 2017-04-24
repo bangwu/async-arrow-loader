@@ -45,7 +45,7 @@ handleSubmit = async () => {
 }
 ```
 
-If you want get the Promise response data, you can write like this:
+If you want to get the Promise response data, you can write like this:
 
 ---Old way:---
 
@@ -66,5 +66,35 @@ handleSubmit = async () => {
     let data = await this.props.onSubmit()
     dosomething(data)
     //do something here ...., after the promise resolve
+}
+```
+
+If you want to catch the reject status:
+
+---Old way:---
+
+```javascript
+handleSubmit = () => {
+    this.props.onSubmit()
+        .then((data) => {
+            dosomething(data)
+            //do something here ...., after the promise resolve
+        }).catch((error) => {
+            // do somethind after the promise reject
+        })
+}
+```
+
+---New way:---
+
+```javascript
+handleSubmit = async () => {
+    try{
+        let data = await this.props.onSubmit()
+        dosomething(data)
+        //do something here ...., after the promise resolve
+    } catch (e) {
+        // do somethind after the promise reject
+    }
 }
 ```
