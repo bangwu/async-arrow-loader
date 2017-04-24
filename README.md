@@ -1,3 +1,5 @@
+## async-arrow-loader
+
 ```bash
 yarn add async-arrow-loader --dev
 ```
@@ -39,6 +41,30 @@ handleSubmit = () => {
 ```javascript
 handleSubmit = async () => {
     await this.props.onSubmit()
+    //do something here ...., after the promise resolve
+}
+```
+
+If you want get the Promise response data, you can write like this:
+
+---Old way:---
+
+```javascript
+handleSubmit = () => {
+    this.props.onSubmit()
+        .then((data) => {
+            dosomething(data)
+            //do something here ...., after the promise resolve
+        })
+}
+```
+
+---New way:---
+
+```javascript
+handleSubmit = async () => {
+    let data = await this.props.onSubmit()
+    dosomething(data)
     //do something here ...., after the promise resolve
 }
 ```
