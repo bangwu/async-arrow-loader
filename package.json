@@ -1,12 +1,16 @@
 {
   "name": "async-arrow-loader",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "This is a webpack loader, Can help you use the arrow function and the async/await work together",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bangwu/async-arrow-loader.git"
+  },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Bang Wu",
+  "license": "MIT"
 }
